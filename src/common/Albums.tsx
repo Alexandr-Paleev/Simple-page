@@ -5,11 +5,12 @@ import { RootStateType } from "../store";
 import { getAlbums } from "../store/apiActions";
 
 interface IAlbums {
+  userId: number;
   setActive: (value: boolean) => void;
 }
 
 const Albums: React.FC<IAlbums> = (props): JSX.Element => {
-  const { setActive } = props;
+  const { userId, setActive } = props;
   const dispatch = useAppDispatch();
   const albums = useAppSelector(
     (state: RootStateType) => state.albumsSlice.albums
@@ -25,11 +26,11 @@ const Albums: React.FC<IAlbums> = (props): JSX.Element => {
       <Scrollbars
         autoHide
         autoHeight={true}
-        autoHeightMin="calc(100vh - 300px)"
-        autoHeightMax="calc(100vh - 300px)"
+        autoHeightMin="calc(100vh - 400px)"
+        autoHeightMax="calc(100vh - 400px)"
       >
         <ul>
-          {albums.map((album) => (
+          {albums.filter(album => album.userId === userId).map((album) => (
             <li key={album.id} style={{ padding: "5px 10px", width: "300px" }}>
               <em>{album.title}</em>
             </li>

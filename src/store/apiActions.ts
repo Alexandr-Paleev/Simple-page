@@ -10,7 +10,6 @@ export const getUsers = () => {
       axios.get(`${API_URL}/users`)
           .then(res => res.data)  
           .then(data => dispatch(setDataUsers(data)))
-          .then(data => console.log(data.payload))
           .catch(e => console.log(e))
   }
 }
@@ -20,7 +19,6 @@ export const getPosts = () => {
       axios.get(`${API_URL}/posts`)
           .then(res => res.data)  
           .then(data => dispatch(setDataPosts(data)))
-          .then(data => console.log(data.payload))
           .catch(e => console.log(e))
   }
 }
@@ -30,7 +28,6 @@ export const getAlbums = () => {
       axios.get(`${API_URL}/albums`)
           .then(res => res.data)  
           .then(data => dispatch(setDataAlbums(data)))
-          .then(data => console.log(data.payload))
           .catch(e => console.log(e))
   }
 }

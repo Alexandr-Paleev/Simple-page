@@ -36,4 +36,3 @@ export type RootStateType = ReturnType<RootReducerType>;
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 window.store = store;
-// console.log('store ', store.getState());

@@ -3,26 +3,26 @@ import type { RootStateType } from '../index';
 
 export type UserDataType = {
   id: 1,
-    name: string,
-    username: string,
-    email: string,
-    address: {
-      street: string,
-      suite: string,
-      city: string,
-      zipcode: string,
-      geo: {
-        lat: string,
-        lng: string
-      }
-    },
-    phone: string,
-    website: string,
-    company: {
-      name: string,
-      catchPhrase: string,
-      bs: string
+  name: string,
+  username: string,
+  email: string,
+  address: {
+    street: string,
+    suite: string,
+    city: string,
+    zipcode: string,
+    geo: {
+      lat: string,
+      lng: string
     }
+  },
+  phone: string,
+  website: string,
+  company: {
+    name: string,
+    catchPhrase: string,
+    bs: string
+  }
 };
 
 export type UsersStateType = {
@@ -38,9 +38,6 @@ const usersSlice = createSlice({
   initialState,
   reducers: {
     setDataUsers(state, action: PayloadAction<UserDataType[]>) {
-      // if (!action.payload.length) {
-      //   return
-      // }
       state.users = [];
       state.users.push(...action.payload);
     },

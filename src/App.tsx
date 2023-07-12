@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
 import { PATH } from "./constants/appRouter";
 import Posts from "./pages/Posts";
+import User from "./pages/User";
 import Users from "./pages/Users";
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
     <div>
       <Routes>
         <Route path={PATH.USERS} element={<Users />} />
-        <Route path={PATH.POSTS} element={<Posts />} />
+        <Route path={PATH.POSTS} element={<Users />} />
+        <Route path={PATH.POSTS_ID} element={<User />} />
+        <Route path={PATH.POSTS_ALL} element={<Posts />} />
       </Routes>
     </div>
   );

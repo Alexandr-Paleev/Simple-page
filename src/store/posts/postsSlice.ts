@@ -21,9 +21,6 @@ const postsSlice = createSlice({
   initialState,
   reducers: {
     setDataPosts(state, action: PayloadAction<PostDataType[]>) {
-      // if (!action.payload.length) {
-      //   return
-      // }
       state.posts = [];
       state.posts.push(...action.payload);
     },
